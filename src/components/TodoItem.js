@@ -19,13 +19,13 @@ const TodoItem = ({ todo, onToggle, onDelete }) => {
       {/* 할 일의 텍스트를 렌더링하고, 완료 상태에 따라 텍스트에 취소선을 적용합니다. */}
       <span
         className={styles.todoText}
-        style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+        style={{ textDecoration: todo.completed ? "line-through rgba(128,128,128,0.5) 12px" : "none" }}
       >
         {todo.text}
       </span>
 
       {/* 삭제 버튼을 렌더링하고, 클릭 시 onDelete 함수를 호출하여 해당 할 일을 삭제합니다. */}
-      <button onClick={onDelete}>Delete</button>
+      <button className={styles.deleteButton} onClick={onDelete}>🗑️</button>
     </li>
   );
 };
